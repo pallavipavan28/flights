@@ -1,0 +1,52 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <!-- Flight Data Box -->
+    <div class="col-md-6">
+      <div class="flight-box card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Selected Flight: Flight {{ selectedFlight?.id }}</h5>
+          <p class="card-text">Origin: {{ selectedFlight?.origin }}</p>
+          <p class="card-text">Destination: {{ selectedFlight?.destination }}</p>
+          <p class="card-text">Date: {{ selectedFlight?.date }}</p>
+          <p class="card-text">Price: {{ selectedFlight?.price | currency }}</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Booking Form Box -->
+    <div class="col-md-6">
+      <div class="booking-box card mb-3">
+        <div class="card-body">
+          <h2 class="card-title">Booking Form</h2>
+          <form (submit)="submitBookingForm()">
+            <div class="form-group">
+              <label for="passengerName">Passenger Name:</label>
+              <input type="text" class="form-control" id="passengerName" name="passengerName" [(ngModel)]="passengerName" required>
+            </div>
+            <div class="form-group">
+              <label for="passengerEmail">Email:</label>
+              <input type="email" class="form-control" id="passengerEmail" name="passengerEmail" [(ngModel)]="passengerEmail" required>
+            </div>
+            <div class="form-group">
+              <label for="passengerPhone">Phone Number:</label>
+              <input type="tel" class="form-control" id="passengerPhone" name="passengerPhone" [(ngModel)]="passengerPhone" required>
+            </div>
+            <div class="form-group">
+              <label for="seatSelection">Seat Selection:</label>
+              <select class="form-control" id="seatSelection" name="seatSelection" [(ngModel)]="seatSelection" required>
+                <option value="Window">Window</option>
+                <option value="Aisle">Aisle</option>
+                <option value="Middle">Middle</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirm Booking</button>
+            <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #noFlightSelected>
+  <p>No flight selected for booking. Please go back to search results and select a flight.</p>
+</ng-template>

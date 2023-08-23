@@ -1,0 +1,36 @@
+/* ul li a {
+    font-size: 17px;
+    font-weight: 600;
+    color: green;
+}
+ul li a:hover{
+     color: skyblue;
+} */
+.Fly8{
+    color: aliceblue;
+}
+.Fly8:hover{
+    color: skyblue;
+}
+body {
+    background-image: url('/assets/flight.jpg');
+    background-size: cover; /* This ensures the image covers the entire body */
+    /* background-repeat: no-repeat; Prevent the image from repeating */
+  }
+  html, body {
+    height: 100%;
+  }
+  .book{
+    font-size: 17px;
+    font-weight: 600;
+    color: aliceblue;
+  }
+  .book:hover{
+    color: skyblue;
+  }
+  .lkm{
+    margin-top: 200px;
+  }
+  .navbar-toggler{
+    background-color: aliceblue;
+  }
